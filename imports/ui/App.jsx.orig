@@ -1,0 +1,153 @@
+
+import React, { Component } from 'react';
+import PropTypes from 'prop-types';
+import {Mongo} from 'meteor/mongo';
+import ReactDOM from 'react-dom';
+import { Meteor } from 'meteor/meteor';
+import { createContainer } from 'meteor/react-meteor-data';
+import { Profiles } from '../api/profiles.js';
+import { Posts } from '../api/posts.js';
+import AccountsUIWrapper from './AccountsUIWrapper.jsx';
+import UserProfilePage from './pages/Profiles.js';
+// app component
+class App extends Component {
+  constructor(props) {
+    super(props);
+
+    this.state = {
+      hideCompleted: false,
+    };
+  }
+  renderPosts() {
+      var text = [];
+      let postsToDisplay = this.props.posts;
+      return postsToDisplay.map((post) => {
+          <h5>Post:</h5>
+          return (
+              <ul>
+                  <li>{Posts.findOne(post).accountId}</li>
+                  <li>{Posts.findOne(post).date}</li>
+                  <li>{Posts.findOne(post).boatType}</li>
+                  <li>{Posts.findOne(post).division}</li>
+                  <li>{Posts.findOne(post).comments}</li>
+              </ul>
+              );
+      });
+    /*for (i=0; i < Posts.find({}).count(); i++) {
+      text.push("Post " +(i+1)+ ": ")
+      text.push(<ul><li>{Posts.findOne({ accountId: Meteor.user()._id }, {skip: i}).accountId}</li>
+      <li>{Posts.findOne({ accountId: Meteor.user()._id }, {skip: i}).date}</li>
+      <li>{Posts.findOne({ accountId: Meteor.user()._id }, {skip: i}).boatType}</li>
+      <li>{Posts.findOne({ accountId: Meteor.user()._id }, {skip: i}).division}</li>
+      <li>{Posts.findOne({ accountId: Meteor.user()._id }, {skip: i}).comments}</li></ul>)
+
+
+<<<<<<< HEAD
+  handleCreate(event) {
+      const text = ReactDOM.findDOMNode(this.refs.textInput).value.trim();
+      Meteor.users.update( Meteor.userId(), { $set: { 'profile.first_name': text } } );
+=======
+  }
+    return text;*/
+>>>>>>> profilepage
+  }
+
+  handleSubmit(event) {
+      Meteor.logout();
+  }
+
+<<<<<<< HEAD
+    render() {
+=======
+  updateProfile(event) {
+      event.preventDefault();
+      var first = document.getElementById("first").value;
+      var last = document.getElementById("last").value;
+      var memberType = document.getElementById("member").value;
+      var email = document.getElementById("email").value;
+      var phone = document.getElementById("phone").value;
+      Meteor.call('profiles.insert', first, last, memberType, email, phone);
+      //Profiles.insert({ accountId: Meteor.user()._id, first: first, last: last, member: memberType, email: email, phone: phone });
+  }
+
+  render() {
+>>>>>>> profilepage
+    return (
+
+      <div className="container">
+            {this.props.currentUser != null ? '' :
+                <header id="loginForm">
+                    <h1>Log In, or Create Account</h1>
+                    <AccountsUIWrapper />
+                </header>
+            }
+<<<<<<< HEAD
+            {this.props.currentUser && Meteor.user().profile === null ?
+              <div id="create-profile">
+                <form id="create" onSubmit={this.handleCreate.bind(this)}>
+                  First Name: <input type="text" ref="textInput"></input><br/>
+                  Last Name: <input type="text"></input><br/>
+                  Member Type: <input type="text"></input><br/>
+                  E-mail Address: <input type="text"></input><br/>
+                  Phone Number: <input type="text"></input><br/>
+                  <input type="submit" value="Submit" />
+                </form>
+              </div>
+              :
+              <div id="profile">
+                    <form id="logout" onSubmit={this.handleSubmit.bind(this)}>
+                        This is a placeholder for the profile page. <br/>
+                        This button is to test logging out. <br/>
+                    <input type="submit" value="Click to logout" />
+                    </form>
+              </div>
+              }
+=======
+            {this.props.currentUser != null && Profiles.find({}).count() == 0 ?
+                <div id="create-profile">
+                      <form id="create" onSubmit={this.updateProfile.bind(this)}>
+                        <span class="profile-form">First Name: <input id="first" type="text"></input></span><br />
+                        <span class="profile-form">Last Name: <input id="last" type="text"></input></span><br />
+                        <span class="profile-form">Member Type: <input id="member" type="text"></input></span><br />
+                        <span class="profile-form">E-mail Address: <input id="email" type="text"></input></span><br />
+                        <span class="profile-form">Phone Number: <input id="phone" type="text"></input></span><br />
+                        <span class="profile-form"><input type="submit" value="Submit" /></span>
+                    </form>
+                </div> : ''}
+            {this.props.currentUser != null && Profiles.find({}).count() != 0 ?
+                <div id="profile">
+
+                        <UserProfilePage/>
+
+                        
+
+
+                    <form id="logout" onSubmit={this.handleSubmit.bind(this)}>
+                        <input type="submit" value="Logout" />
+                    </form>
+                </div>
+                : ''}
+>>>>>>> profilepage
+      </div>
+    );
+    }
+}
+
+App.propTypes = {
+  profiles: PropTypes.array.isRequired,
+  incompleteCount: PropTypes.number.isRequired,
+};
+
+export default createContainer(() => {
+  Meteor.subscribe('profiles');
+  Meteor.subscribe('posts');
+
+  return {
+  // tasks: Tasks.find({}, { sort: { createdAt: -1}}).fetch(),
+  // incompleteCount: Tasks.find({ checked: { $ne: true }}).count(),
+    currentUser: Meteor.user(),
+    count: Profiles.find({}).count(),
+    profiles: Profiles.find({}, { sort: { createdAt: - 1 } }).fetch(),
+    posts: Posts.find({}, { sort: { createdAt: - 1 } }).fetch()
+  };
+}, App);

@@ -1,0 +1,758 @@
+/*
+Author: Katie Austin, Jimmy Lin, Scott Rachwal,
+         Brandon Rader, Adam Yallum
+Date:   4/30/2018
+
+Description: Cascading stylesheet used for the application.
+
+Last Modified: 4/30/2018
+Last Modified By:  Adam Yallum
+*/
+
+body {
+  /*Originally default but changed to Times New Roman*/
+  font-family: "Open Sans", sans-serif;/*Change by Jimmy Lin 29 October 2017*/
+  background-color: #FFFFFF;  /* Changed to White */
+  background-image: linear-gradient(to bottom, #000000, #781c2e 100%);/*Modified by Jimmy Lin 29 October 2017- changed background color to match theme*/
+  /*background-attachment: fixed;*/
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  padding: 0;
+  margin: 0;
+  background: url(/boats.jpg) no-repeat center center fixed;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+}
+
+/* KA added for create account form fields to be hidden/dislayed based on member type selected */
+.hidden {
+    visibility: hidden;
+    overflow: hidden;
+    width: 0px;
+    height: 0px;
+}
+
+h1 {
+  color: white !important;
+    text-shadow: -1px 0 black, 0 1px black, 1px 0 black, 0 -1px black;
+    text-align: center;
+  font-size: 5vw;
+}
+
+#navTitle {
+  padding: 20px 15px 15px 15px;
+  text-align:center;
+  color: white;
+  background: #73000A;
+  margin-bottom:0;
+  font-size: 2em;
+  margin-top: 0px;
+}
+
+h4 {
+  color: black;
+  text-align: rightleft;
+  font-size: 14px;
+}
+
+h5 {
+  color: black;
+  text-align: left;
+  font-size: 12px;
+}
+
+section {
+  color: white;
+  text-align: left;
+  font-size: 12px;
+}
+
+form {
+  margin-top: 10%;
+  margin-bottom: -10px;
+  position: relative;
+  width: 100%;
+  background: white;
+  border: 2px solid black;
+  border-radius: 15px;
+  padding-left: 5%;
+  padding-right: 5%;
+  clear: both;
+  padding-top: 5%;
+  padding-bottom: 5%;
+}
+
+form > * {
+  width: 100;
+}
+
+header {
+  text-align: center;
+  background: #73000A;
+  padding: 20px 15px 15px 15px;
+  position: center;
+}
+
+input:invalid {
+  border: 2px dashed red;
+}
+
+input:valid {
+  border: 2px solid black;
+}
+
+p {
+  margin-top:-27px;
+  font-size: 1.3rem;
+  margin-left: 2%;
+  font-family: Calibri, light;
+}
+
+p2 {
+  margin-top:-15px;
+}
+
+a {
+  text-decoration: none;
+}
+
+a:link {
+color: #FFFFFF;
+}
+
+a:visited {
+ color: #FFFFFF;
+}
+
+a:focus {
+ color: #D3D3D3;
+}
+
+a:hover {
+color: #D3D3D3;
+}
+
+a:active {
+color: #FFFFFF;
+}
+
+
+.create-profile {
+  cursor: pointer;
+  user-select: none;
+  padding: 4px 8px;
+  line-height: 2;
+  text-align: left;
+  background: #FFFFFF;
+  /*border-radius: 4px;*/
+  color:black;
+  margin: 0 auto;
+  width: 40%;
+  display: grid;
+}
+
+.column{
+	float: left;
+	width: 100%;
+	height: 100%;
+}
+
+
+.navbar-default {
+    background-color: #000000;
+    border-color: #E7E7E7;
+}
+
+.navbar-toggle {
+     padding: .7em .7em;
+     margin-top: .5em;
+     margin-bottom: .5em;
+}
+
+.nav a {
+    color: white !important;
+    font-size: 1.6em !important;
+}
+
+nav ul{
+	overflow: hidden;
+	/*overflow-y: scroll;*/
+}
+
+/*.page-content{
+  column-count: 3;
+  column-gap: 70px;
+  column-rule: 1px solid black;
+  height: 1000px;
+  width: 100%;
+  left: 0;
+} */
+
+.page-content-gsc{
+  column-count: 3;
+  column-gap: 100px;
+  column-rule: 1px solid black;
+  height: 1000px;
+  width: 100%;
+  left: 0;
+}
+
+.page-content-lmyra{
+  column-count: 3;
+  column-gap: 100px;
+  column-rule: 1px solid black;
+  height: 1000px;
+  width: 100%;
+  left: 0;
+}
+
+.profile-form {
+  cursor: pointer;
+  user-select: none;
+  padding: 2px 2px;
+  line-height: 1.5;
+  text-align: left;
+  color:black;
+  margin: 0 auto;
+  width: 70%;
+  display: grid;
+  background: #FFFFFF;
+}
+
+.profile-form-checkboxes {
+  cursor: pointer;
+  user-select: none;
+  padding: 2px 2px;
+  line-height: 1;
+  text-align: left;
+  color:black;
+  margin: 0 auto;
+  width: 50%;
+  display: block;
+  background: #FFFFFF;
+}
+
+ul.normal {
+  display: table;
+  margin-left: 0;
+  padding-left: 0;
+  list-style: square outside none;
+}
+
+
+#box {
+  background:#000000;
+  height:30px;
+  width:100%;
+}
+
+#login-buttons {
+  display: block;
+}
+
+#login-buttons .login-button,
+.accounts-dialog .login-button {
+  cursor: pointer;
+  user-select: none;
+  padding: 4px 8px;
+  line-height: 2;
+  text-align: center;
+  background: #FFFFFF;
+  border-radius: 4px;
+  color:black;
+  margin: 0 auto;
+  /*margin-left: 35%;*/
+  width: 30%;
+}
+#login-email-label-and-input{
+  margin-left:2.5%;
+  margin-bottom:9px;
+  color: grey;
+}
+
+#login-password-label-and-input{
+  margin-bottom:9px;
+  color: grey;
+}
+
+#login-old-password-label-and-input,
+
+#login-password-again-label-and-input{
+  margin-bottom:9px;
+  color: grey;
+}
+
+#profile {
+	margin-left: 0px !important;
+	position: absolute !;
+}
+
+#logout {
+	margin-left: 0px;
+	width: 100%;
+	left: 10px;
+}
+
+#create {
+	margin-bottom: 10px;
+  background: white !important;
+  height: 30%;
+  width: 85%;
+  margin-left: 7.5%;
+}
+
+#create > span > * {
+  margin-bottom: 1% !important;
+}
+
+
+form {
+
+  margin-top: 10px;
+
+  margin-bottom: -10px;
+
+  position: relative;
+
+}
+
+.navbar-default {
+    background-color: #000000;
+    border-color: #E7E7E7;
+}
+
+.navbar-toggle {
+	padding: 0.5em 0.5em;
+	margin-top: 0.7em;
+	margin-bottom: 0.7em;
+}
+
+#createPostButton, #createPost {
+  display: block;
+	margin-left: auto;
+  margin-right: auto;
+	width: 100%;
+	position: relative;
+  margin-top: 3%;
+  margin-bottom: 3%;
+}
+
+#createPost > * {
+  width: 100%;
+}
+
+#createPost > input {
+  font-size: 20px;
+}
+
+#forgot-password-link {
+  color: #337ab7 !important;
+  font-size: 1.1em !important;
+  width: 50%;
+}
+
+#signup-link {
+  color: #337ab7 !important;
+  font-size: 1.1em !important;
+  width: 50%;
+  text-align: right;
+}
+
+.inner {
+  border: 4px solid black;
+  border-radius: 25px;
+
+  padding-top: 5px;
+  padding-bottom: 15px;
+  padding-left: 15px;
+  padding-right: 15px;
+  background: #73000A;
+  overflow: auto;
+
+
+}
+
+.container-fluid {
+    padding: 15px;
+    margin-left: 4%;
+    margin-right: 4%;
+}
+
+.col-md-4 {
+  margin-bottom: 2%;
+}
+
+.col-md-6 {
+  padding-left: 0px;
+  padding-right: 0px;
+}
+
+.inner > h3 {
+  color: white;
+  font-size: 1.5rem;
+  margin: 0;
+  margin-bottom: 10px;
+}
+
+.heading {
+  text-align: center;
+  color: white;
+  font-size: 1.6em;
+  margin-top: 5px;
+  border-bottom: 1px solid white;
+}
+
+.container {
+  height: 100%;
+  width: 89%;
+  display: flex;
+  position: fixed;
+  justify-content: center;
+}
+
+.pageHead {
+  text-align: center;
+  text-shadow: -1px 0 black, 0 1px black, 1px 0 black, 0 -1px black;
+  color: white;
+  font-size: 2.5em;
+  padding-bottom: 4px;
+  margin-top: 0px;
+  font-weight: bold;
+}
+
+
+.dropdown-toggle {
+  background-color: black !important;
+}
+.editBoxes {
+    color: black !important;
+}
+
+#createPostButton {
+  display: inline-block;
+  padding: 12px 25px;
+  font-size: 24px;
+  cursor: pointer;
+  text-align: center;
+  text-decoration: none;
+  outline: none;
+  color: #fff;
+  background-color: #e7e7e7;
+  color: black;
+  border: none;
+  border-radius: 15px;
+}
+
+#createPostButton:hover {
+  background-color: #000000; /* Green */
+  color: white;
+}
+
+#createPostButton:active {
+  background-color: #000000;
+  transform: translateY(4px);
+}
+
+#postSubmit {
+  display: inline-block;
+  padding: 7px 13px;
+  font-size: 12px;
+  cursor: pointer;
+  text-align: center;
+  text-decoration: none;
+  outline: none;
+  color: #fff;
+  background-color: #e7e7e7;
+  color: black;
+  border: none;
+  border-radius: 15px;
+}
+
+.post {
+  margin-bottom: 2%;
+  background: black;
+  border-radius: 25px;
+  padding: 4% 5% 5% 5%;
+  overflow: auto;
+}
+
+.post > form > span {
+  color: black;
+  width: 100%;
+  border: 2px solid black;
+  border-radius: 7px;
+  margin-bottom: 3%;
+  margin-left: 0%;
+  margin-right: 0%;
+}
+
+
+
+.delete {
+    float: left;
+    display: inline-block;
+    padding: 4px 10px;
+    font-size: 1.5rem;
+    cursor: pointer;
+    text-align: center;
+    text-decoration: none;
+    outline: none;
+    background-color: #f44336;
+    color: #ffffff;
+    text-shadow: -1px 0 black, 0 1px black, 1px 0 black, 0 -1px black;
+    border: none;
+    border-radius: 5px;
+    width: 30%;
+    margin-right: 2%;
+}
+
+.deactivate {
+    float: left;
+    display: inline-block;
+    padding: 4px 10px;
+    font-size: 1.5rem;
+    cursor: pointer;
+    text-align: center;
+    text-decoration: none;
+    outline: none;
+    background-color: #f44336;
+    color: #ffffff;
+    text-shadow: -1px 0 black, 0 1px black, 1px 0 black, 0 -1px black;
+    border: none;
+    border-radius: 5px;
+    width: 40%;
+    margin-right: 2%;
+}
+
+.approve {
+    float: left;
+    display: inline-block;
+    padding: 4px 10px;
+    font-size: 1.5rem;
+    cursor: pointer;
+    text-align: center;
+    text-decoration: none;
+    outline: none;
+    background-color: green;
+    color: #ffffff;
+    text-shadow: -1px 0 black, 0 1px black, 1px 0 black, 0 -1px black;
+    border: none;
+    border-radius: 5px;
+    width: 33%;
+    margin-right: 2%;
+}
+
+.edit {
+  float: left;
+  display: inline-block;
+  padding: 4px 10px;
+  font-size: 1.5rem;
+  cursor: pointer;
+  text-align: center;
+  text-decoration: none;
+  outline: none;
+  background-color: #008CBA;
+  color: #ffffff;
+  text-shadow: -1px 0 black, 0 1px black, 1px 0 black, 0 -1px black;
+  border: none;
+  border-radius: 5px;
+  width: 30%;
+  margin-right: 2%;
+  margin-bottom: 3%;
+}
+
+.col-75 {
+  float:left;
+  width: 75%;
+  font-size: 1.3rem;
+  padding-left: 3px;
+  display:flex;
+  align-items:center;
+  width:75%;
+  padding-left: 8%;
+  position: absolute;
+  bottom: 0;
+  right: 0;
+  margin-bottom: 2%;
+  color: white;
+}
+
+.col-75 > * {
+  bottom: 0;
+  right: 0;
+  position: absolute;
+  color: white;
+}
+
+.col-25 {
+  float:left;
+  width: 25%;
+  font-size: 1.3rem;
+  margin-bottom: 2%;
+  color: white;
+}
+
+.submit {
+  display: block;
+  margin: 0 auto;
+  text-align: center;
+  background-color: #e7e7e7;
+  color: #000000;
+  cursor: pointer;
+  border-radius: 5px;
+  padding: 4px 10px;
+}
+
+.events {
+  font-size: 1.3rem;
+  padding-bottom: 5%;
+}
+
+.events > span {
+  color: white;
+}
+
+.line {
+  overflow: auto;
+  align-items:center;
+  position: relative;
+}
+
+.acceptance {
+  text-align: center;
+  font-size: 1.21rem;
+}
+
+#zwpLFBYBrwgDC98GD {
+  width: 99%;
+}
+
+.dropdown-toggle::after {
+  visibility: hidden !important;
+}
+
+.col-md-12 {
+  padding: 0;
+}
+
+#middleCol {
+  margin-bottom: 3%;
+}
+
+#requestDiv {
+  margin-bottom: 3%;
+  text-align: center;
+  padding-top: 15px;
+}
+
+.row.limit [class*="col-"] {
+  max-height: 500px;
+}
+
+.scroll {
+  clear: both;
+  max-height: 350px;
+  overflow-y: scroll;
+}
+
+.scroll::-webkit-scrollbar {
+    width: 20px;
+}
+
+/* Track */
+.scroll::-webkit-scrollbar-track {
+    box-shadow: inset 0 0 5px grey;
+    border-radius: 10px;
+}
+
+/* Handle */
+.scroll::-webkit-scrollbar-thumb {
+    background: white;
+    border-radius: 10px;
+}
+
+/* Handle on hover */
+.scroll::-webkit-scrollbar-thumb:hover {
+    background: #b30000;
+}
+
+.longButton {
+  width: 80%;
+  margin-left: 10%;
+}
+
+li {
+  font-size: 1.4rem;
+}
+
+.filters {
+  text-align: center;
+  float:left;
+  width: 40%;
+  margin-left: 6%;
+  overflow: auto;
+  margin-bottom: 2%;
+}
+
+#crewPositionFilter {
+  border: 2px solid black;
+  height: 22px;
+}
+
+#dateFilter {
+  height: 22px;
+}
+
+#filterHead {
+  text-align: center;
+}
+
+#filterHead > h3 {
+  margin-top: 3%;
+}
+
+#postEvent {
+  height: 30px;
+}
+
+select {
+  width: 100%;
+  font-size: 20px !important;
+  border: 2px solid black;
+  margin-bottom: 5% !important;
+}
+
+input {
+  width: 100%;
+  border: 1px solid black !important;
+  margin-bottom: 3% !important;
+  font-size: 15px !important;
+}
+
+#login-email {
+  margin-bottom: 0px !important;
+}
+
+#skillone {
+  margin-bottom: 2% !important;
+}
+#skilltwo {
+  margin-bottom: 2% !important;
+}
+#skillthree {
+  margin-bottom: 2% !important;
+}
+#skillfour {
+  margin-bottom: 2% !important;
+}
+#skillfive {
+  margin-bottom: 2% !important;
+}
+#login-password {
+  margin-bottom: 2px !important;
+}
